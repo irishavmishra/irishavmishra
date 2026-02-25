@@ -79,13 +79,7 @@ export default function Mast() {
           }}
         />
 
-        {/* Gradient overlay for text readability on mobile */}
-        <div
-          className="absolute inset-0 z-[2] pointer-events-none md:hidden"
-          style={{
-            background: 'linear-gradient(to right, var(--color-bg) 40%, transparent 85%)'
-          }}
-        />
+
 
         {/* Bottom Line */}
         <div
@@ -99,9 +93,9 @@ export default function Mast() {
         />
 
         {/* Content */}
-        <div className="wrap">
+        <div className="wrap flex flex-col justify-center h-full relative z-[3]">
           <h1
-            className="drift right relative z-[3] opacity-0"
+            className="drift right relative opacity-0"
             style={{
               fontFamily: '"Satoshi", system-ui, -apple-system, sans-serif',
               fontWeight: 700,
@@ -111,8 +105,11 @@ export default function Mast() {
               animation: 'fadeIn 0.8s ease-out 0.3s forwards'
             }}
           >
-            I build software that simplify and automate real world business operations using <br /> <code className="tracking-[-0.08em] font-normal">Full Stack</code> and&nbsp;AI.
+            I build software that simplify and automate real world business operations using <br className="hidden md:block" /> <code className="tracking-[-0.08em] font-normal">Full Stack</code> and&nbsp;AI.
           </h1>
+          <div className="mobile-arrow block md:hidden mt-8 text-[32px] font-normal opacity-50 relative z-[3] animate-bounce">
+            ↓
+          </div>
         </div>
       </div>
 
@@ -139,62 +136,95 @@ export default function Mast() {
         }
         
         @media screen and (max-width: 768px) {
-          .mast {
-            min-height: 100lvh;
+          .mast-contain {
+            height: 100svh;
+            min-height: 600px;
           }
-          
+
+          .mast {
+            height: 100% !important;
+            min-height: 100% !important;
+            padding-top: var(--headerHeight) !important;
+            display: flex;
+            align-items: center;
+          }
+
+          .mast > div:first-child { /* Background image */
+            position: absolute !important;
+            top: 0;
+            left: 20%;
+            right: -20% !important;
+            bottom: 0;
+            width: auto;
+            height: 100% !important;
+            background-position: center !important;
+            background-size: cover !important;
+            z-index: 1;
+            /* Fade on left for text readability */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 80%);
+            mask-image: linear-gradient(to right, transparent 0%, black 80%);
+          }
+
           .mast .wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0 var(--outerPad);
+            z-index: 3;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: calc(100lvh - var(--headerHeight));
+            align-items: flex-start;
           }
-          
+
           h1 {
-            margin-block-start: -1.2em;
-            max-width: 300px;
-            padding-block: 0;
-            padding-inline-end: 0;
-            position: relative;
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0;
+            background: none;
+            font-size: clamp(2.2rem, 9vw, 3.5rem) !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.04em !important;
           }
           
           h1:after {
-            animation: arrowDrift 0.84s ease-in-out infinite alternate;
-            content: "\\2193";
-            font-family: var(--font-arrow);
-            font-size: var(--size-m);
-            left: 0;
-            position: absolute;
-            top: calc(100% + 1em);
+            display: none;
           }
           
-          @keyframes arrowDrift {
-            0% { transform: translateY(0); }
-            to { transform: translateY(0.5em); }
+          code:after {
+            font-size: 0.7em;
+          }
+          
+          .mobile-arrow {
+            display: block !important;
+            margin-top: 5vh !important;
           }
         }
         
-        @media screen and (max-width: 930px) {
+        @media screen and (max-width: 930px) and (min-width: 769px) {
           .mast > div:first-child {
-            right: -7% !important;
+            right: -2% !important;
           }
         }
-        
-        @media screen and (max-width: 840px) {
+
+        @media screen and (max-width: 840px) and (min-width: 769px) {
           .mast > div:first-child {
-            right: -12% !important;
+            right: -4% !important;
           }
         }
 
         @media screen and (max-width: 480px) {
-          h1 {
-            max-width: 260px;
-            font-size: clamp(1.6rem, 6.5vw, 2.2rem);
-          }
-          
           .mast > div:first-child {
-            right: -18% !important;
-            background-size: auto 160% !important;
+            left: 10%;
+            right: -40% !important;
+            /* Even more fade on smaller screens */
+            -webkit-mask-image: linear-gradient(to right, transparent 15%, black 85%);
+            mask-image: linear-gradient(to right, transparent 15%, black 85%);
+          }
+
+          h1 {
+            font-size: clamp(2.2rem, 11vw, 2.8rem) !important;
+            max-width: 95% !important;
           }
         }
       `}</style>

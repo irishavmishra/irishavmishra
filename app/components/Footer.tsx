@@ -108,10 +108,20 @@ export default function Footer() {
           footer {
             padding-block-end: calc(var(--innerPad) / 2);
           }
-          
+
           footer .wrap {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 1em;
+            align-items: center;
+            text-align: center;
+          }
+
+          footer .wrap p {
+            text-align: center;
+          }
+
+          footer .wrap ul {
+            justify-content: center;
           }
         }
       `}</style>
