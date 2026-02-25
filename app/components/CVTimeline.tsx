@@ -181,7 +181,7 @@ export default function CVTimeline() {
   return (
     <section className="cv-timeline pb-24" data-section="cv">
       {/* Container restricted and aligned as original simple list */}
-      <div className="lg:ml-[var(--centerMargin)] lg:pl-0 pl-[48px] pr-6 lg:pr-0">
+      <div className="lg:ml-[var(--centerMargin)] lg:pl-0 pl-[32px] sm:pl-[48px] pr-4 sm:pr-6 lg:pr-0">
 
         <p className="cv-intro text-[1.25rem] md:text-[1.5rem] leading-[1.6] font-normal mb-16 lg:mb-24 opacity-80 max-w-4xl tracking-tight text-[var(--color-fill)]">
           I have built over the last few years, focused on automating operational workflows for individuals and small businesses.
@@ -245,8 +245,8 @@ export default function CVTimeline() {
                 {/* Timeline Dot on vertical line */}
                 <div className={`
                   timeline-node absolute top-[38px]
-                  left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)] 
-                  w-[14px] h-[14px] 
+                  left-[-18px] sm:left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)] 
+                  w-[10px] h-[10px] sm:w-[14px] sm:h-[14px] 
                   border-[2px] border-[var(--color-fill)] bg-[var(--color-bg)] 
                   rounded-full -translate-x-1/2 z-30 
                   transition-all duration-300
@@ -256,7 +256,7 @@ export default function CVTimeline() {
                 {/* Timeline Line Segment perfectly connecting to the next item */}
                 {!isLast && (
                   <div className="absolute w-[1px] bg-[var(--color-fill)] opacity-[0.25] z-10
-                    left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)]
+                    left-[-18px] sm:left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)]
                     top-[45px] h-[calc(100%+48px)] lg:h-[calc(100%+64px)] -translate-x-1/2" />
                 )}
 

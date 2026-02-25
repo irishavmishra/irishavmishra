@@ -10,7 +10,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       if (rafRef.current !== null) return;
-      
+
       rafRef.current = requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
         if (currentScrollY !== lastScrollY.current) {
@@ -31,18 +31,18 @@ export default function Header() {
   }, []);
 
   return (
-    <header 
+    <header
       className="fixed left-0 right-0 z-[200] transition-all duration-500 ease-out"
-      style={{ 
+      style={{
         top: scrolled ? '12px' : '2rem',
       }}
     >
       <div className="wrap flex justify-center">
-        <span 
-          className="me noline inline-block font-bold text-[1.75rem] relative select-none"
+        <span
+          className="me noline inline-block font-bold text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] relative select-none"
           role="button"
         >
-          <span 
+          <span
             className="nav-text inline-flex items-center transition-all duration-500 ease-out"
             style={{
               fontFamily: '"Satoshi", system-ui, -apple-system, sans-serif',
@@ -53,7 +53,7 @@ export default function Header() {
               backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
               backdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
               WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none',
-              boxShadow: scrolled 
+              boxShadow: scrolled
                 ? '0 4px 24px -2px rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.3)'
                 : 'none',
               border: scrolled ? '1px solid rgba(255, 255, 255, 0.4)' : '1px solid transparent',

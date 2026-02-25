@@ -79,6 +79,14 @@ export default function Mast() {
           }}
         />
 
+        {/* Gradient overlay for text readability on mobile */}
+        <div
+          className="absolute inset-0 z-[2] pointer-events-none md:hidden"
+          style={{
+            background: 'linear-gradient(to right, var(--color-bg) 40%, transparent 85%)'
+          }}
+        />
+
         {/* Bottom Line */}
         <div
           className="absolute bottom-0 h-[1px] z-[2] opacity-100"
@@ -144,7 +152,7 @@ export default function Mast() {
           
           h1 {
             margin-block-start: -1.2em;
-            max-width: 240px;
+            max-width: 300px;
             padding-block: 0;
             padding-inline-end: 0;
             position: relative;
@@ -175,6 +183,18 @@ export default function Mast() {
         @media screen and (max-width: 840px) {
           .mast > div:first-child {
             right: -12% !important;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          h1 {
+            max-width: 260px;
+            font-size: clamp(1.6rem, 6.5vw, 2.2rem);
+          }
+          
+          .mast > div:first-child {
+            right: -18% !important;
+            background-size: auto 160% !important;
           }
         }
       `}</style>
