@@ -1,0 +1,34 @@
+# Rishav Mishra
+
+> Full Stack Developer from Bhopal, India. Building web applications using React, Next.js, Node.js, PostgreSQL, and AI.
+
+## About
+
+Rishav Mishra is a Full Stack Developer who builds software that simplifies and automates real-world business operations. He works across the full stack — frontend, backend, database, and deployment. He has shipped 6 projects with 100K+ combined user visits.
+
+Based in Bhopal, India. Available for full-time roles, freelance, and contract projects. Open to remote work and relocation.
+
+## Links
+
+- Website: https://rishav.online
+- Email: onlyrishavmishra@gmail.com
+- LinkedIn: https://www.linkedin.com/in/irishavmishra/
+- GitHub: https://github.com/irishavmishra
+- X/Twitter: https://x.com/irishavmishra
+- Phone: +91 7047420892
+
+## Skills
+
+React, Next.js, Node.js, PostgreSQL, TypeScript, JavaScript, tRPC, Cloudflare Workers, REST APIs, FastAPI, Python, FFmpeg, AI Integration, Drizzle ORM, Zod, Better Auth, IndexedDB, Edge Computing
+
+## Projects
+
+- Rently: Property management app for small landlords — https://rently.property
+- Fiscally: Income tax return filing platform for India — https://fiscally.online
+- CalcTrust: Financial calculator platform for U.S. salary and tax estimation, 100K+ visits — https://calctrust.com
+- ReelBrain: AI service that converts long videos into short vertical clips — https://github.com/irishavmishra/reelbrain
+- FancyText: Unicode text styling tool, 100K+ visits — https://fancytext-gen.vercel.app/
+
+## Availability
+
+Available now. Zero notice period. Open to full-time roles, freelance projects, and agency work.

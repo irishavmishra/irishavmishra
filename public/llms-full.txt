@@ -1,0 +1,164 @@
+# Rishav Mishra — Full Stack Developer
+
+> Full Stack Developer from Bhopal, India. Building web applications that simplify and automate real-world business operations using React, Next.js, Node.js, PostgreSQL, and AI.
+
+---
+
+## Identity
+
+- Full Name: Rishav Mishra
+- Professional Title: Full Stack Developer
+- Location: Bhopal, Madhya Pradesh, India
+- Website: https://rishav.online
+- Email: onlyrishavmishra@gmail.com
+- Phone: +91 7047420892
+- LinkedIn: https://www.linkedin.com/in/irishavmishra/
+- GitHub: https://github.com/irishavmishra
+- X/Twitter: https://x.com/irishavmishra
+- Username across platforms: irishavmishra
+
+---
+
+## Professional Summary
+
+Rishav Mishra is a Full Stack Developer who builds software that simplifies and automates real-world business operations. He builds end-to-end applications that replace manual business workflows with scalable digital processes.
+
+He works across the full stack — frontend, backend, database, and deployment. He has shipped 6 projects with 100K+ combined user visits.
+
+He works best in small teams where he owns the full project. He has experience working with non-technical people and translating their requirements into working software.
+
+His working philosophy is: shipping over planning, small teams over large companies, automation over manual work, documentation over guesswork, iteration over perfection.
+
+---
+
+## Technical Skills
+
+### Frontend
+- React, Next.js, TypeScript, JavaScript
+- HTML, CSS, Tailwind CSS
+- Client-side state management
+- Responsive and accessible UI development
+
+### Backend
+- Node.js, REST APIs, tRPC
+- FastAPI (Python)
+- Authentication systems (Better Auth, JWT, OAuth, OTP, magic links)
+- Role-based access control
+
+### Database
+- PostgreSQL (Neon serverless)
+- Drizzle ORM
+- IndexedDB (browser-side)
+- Database design and schema architecture
+
+### Infrastructure & Deployment
+- Cloudflare Workers (edge computing)
+- Modal (GPU cloud)
+- Vercel
+- Static site generation and export
+
+### AI & Media
+- AI integration (Gemini)
+- WhisperX (speech-to-text with word-level timestamps)
+- FFmpeg (video processing)
+- OpenCV (computer vision)
+
+### Tools & Libraries
+- Zod (validation)
+- jsPDF (browser PDF generation)
+- Git, GitHub
+
+---
+
+## Projects — Detailed
+
+### 1. Rently
+- URL: https://rently.property
+- Category: Property Management / SaaS
+- Tech Stack: Next.js, Nitro, tRPC, PostgreSQL (Neon), Cloudflare Workers, Better Auth
+- Description: Property management app for small landlords. Landlords add properties, manage tenants, create leases, and track rent payments. Tenants get a separate portal to view lease details and submit maintenance requests.
+
+**Technical Challenges Solved:**
+- Edge Database Connectivity: Used Neon's HTTP driver with Drizzle ORM for stateless database queries from Cloudflare Workers edge servers (standard PostgreSQL drivers require TCP which isn't available on Workers).
+- Dual Authentication System: Built two separate auth flows — Better Auth with OAuth for landlords, custom JWT with OTP and magic links for tenants — sharing the same database with isolated sessions.
+- Subscription Enforcement: Built a usage checker that validates plan limits before every create action with cached subscription data to reduce database calls.
+
+---
+
+### 2. Fiscally
+- URL: https://fiscally.online
+- Category: Tax / Finance
+- Tech Stack: Next.js, IndexedDB, Zod, jsPDF
+- Description: Income tax return filing platform for India. Users prepare ITR forms (ITR-1 to ITR-7) directly in the browser. Imports data from multiple government sources, matches and reconciles conflicts, calculates tax, and generates PDF for filing. Built with a Chartered Accountant to ensure tax rule accuracy.
+
+**Technical Challenges Solved:**
+- Multi-Source Data Reconciliation: Built a reconciliation engine with source priority rules and tolerance-based comparisons to automatically resolve mismatches across three government data sources.
+- Form 26AS Parser: Built a custom parser for the messy government text file format with inconsistent formatting, detecting section markers and handling missing data.
+- Browser PDF Generation: Used jsPDF to generate professional multi-page tax documents with headers, footers, and tables entirely in the browser without a server.
+
+---
+
+### 3. CalcTrust
+- URL: https://calctrust.com
+- Category: Financial Calculator
+- Tech Stack: Next.js, Cloudflare Workers
+- Description: Financial calculator platform for U.S. salary and tax estimation. 270+ calculator pages covering salary breakdowns and paycheck estimations for all 50 U.S. states. Uses official IRS bracket data and state tax rules. 100K+ user visits. Deployed on edge servers.
+
+**Technical Challenges Solved:**
+- Tax Calculation Engine: Implemented using official IRS data and state-specific rules with support for graduated rate calculations across all 50 states.
+- 270+ Pages Without Duplication: Built a page generator that produces all pages from centralized data definitions — change data once, all pages update.
+- Zero Backend Search: Built client-side search index that matches queries like "50k in Texas" or "25 per hour yearly" using scored matching, with zero server cost.
+
+---
+
+### 4. ReelBrain
+- URL: https://github.com/irishavmishra/reelbrain
+- Category: AI / Video Processing
+- Tech Stack: FastAPI, WhisperX, FFmpeg, Gemini, Modal
+- Description: AI service that converts long videos into short vertical clips with subtitles. Upload a long video, AI identifies the best moments, detects the active speaker, crops to vertical format, adds word-level subtitles, and outputs ready-to-post short clips.
+
+**Technical Challenges Solved:**
+- Active Speaker Clipping: Used speaker detection with OpenCV and FFmpeg to identify speaking segments and dynamically crop to vertical format around the active speaker.
+- Subtitle Timing: Used WhisperX for word-level timestamps and alignment so subtitles appear exactly when each word is spoken.
+- GPU Processing: Deployed on Modal with GPU runtime and persistent caching for AI models for fast processing.
+
+---
+
+### 5. FancyText
+- URL: https://fancytext-gen.vercel.app/
+- Category: Utility Tool
+- Tech Stack: HTML, CSS, JavaScript
+- Description: Unicode text styling tool with 100K+ user visits. Type normal text, get dozens of styled versions using Unicode characters. Copy and paste anywhere — social media, games, bios, chats.
+
+---
+
+## Working Style
+
+- Ships working software over planning
+- Prefers small teams over large companies
+- Favors automation over manual work
+- Values documentation over guesswork
+- Practices iteration over perfection
+- Owns full projects: frontend, backend, database, deployment
+- Experienced working with non-technical clients
+
+---
+
+## Availability
+
+- Status: Available now
+- Notice Period: Zero
+- Available for: Full-time roles, freelance and contract projects, agency work
+- Location: Bhopal, India
+- Open to: Remote work and relocation
+
+---
+
+## Contact
+
+- Email: onlyrishavmishra@gmail.com
+- Phone: +91 7047420892
+- LinkedIn: https://www.linkedin.com/in/irishavmishra/
+- GitHub: https://github.com/irishavmishra
+- X/Twitter: https://x.com/irishavmishra
+- Portfolio: https://rishav.online

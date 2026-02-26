@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Rishav Mishra
+Contact: onlyrishavmishra@gmail.com
+LinkedIn: https://www.linkedin.com/in/irishavmishra/
+GitHub: https://github.com/irishavmishra
+X/Twitter: https://x.com/irishavmishra
+Location: Bhopal, Madhya Pradesh, India
+
+/* SITE */
+Last update: 2026-02-26
+Standards: HTML5, CSS3, JavaScript ES2024
+Components: React 19, Next.js 16, TypeScript 5
+Styling: Tailwind CSS 4, Vanilla CSS
+Fonts: Satoshi (Fontshare), Rethink Sans (Google Fonts), JetBrains Mono (Google Fonts)
+Software: Visual Studio Code
