@@ -111,15 +111,15 @@ export default function MoreSection() {
         </p>
         <p className="mb-2">
           <strong className="font-semibold">LinkedIn:</strong>{' '}
-          <a href="https://linkedin.com/in/irishavmishra" target="_blank" rel="noopener noreferrer" className="rgbsplit">linkedin.com/in/irishavmishra</a>
+          <a href="https://www.linkedin.com/in/irishavmishra" target="_blank" rel="me noopener noreferrer" className="rgbsplit">linkedin.com/in/irishavmishra</a>
         </p>
         <p className="mb-2">
           <strong className="font-semibold">GitHub:</strong>{' '}
-          <a href="https://github.com/irishavmishra" target="_blank" rel="noopener noreferrer" className="rgbsplit">github.com/irishavmishra</a>
+          <a href="https://github.com/irishavmishra" target="_blank" rel="me noopener noreferrer" className="rgbsplit">github.com/irishavmishra</a>
         </p>
         <p className="mb-6">
           <strong className="font-semibold">Portfolio:</strong>{' '}
-          <a href="https://rishav.online" target="_blank" rel="noopener noreferrer" className="rgbsplit">rishav.online</a>
+          <a href="https://rishav.online" target="_blank" rel="me noopener noreferrer" className="rgbsplit">rishav.online</a>
         </p>
       </div>
     </section>

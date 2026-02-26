@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { FaEnvelope, FaLinkedin, FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(2026);
@@ -40,49 +41,49 @@ export default function Footer() {
           </span>
         </p>
 
-        <ul className="flex flex-1 gap-6 justify-end whitespace-nowrap"
+        <nav aria-label="Social links" className="flex flex-1 gap-6 justify-end whitespace-nowrap items-center"
         >
-          <li>
-            <a
-              className="rgbsplit noline"
-              href="mailto:onlyrishavmishra@gmail.com"
-            >
-              Email
-            </a>
-          </li>
-          <li>
-            <a
-              className="rgbsplit noline"
-              href="https://linkedin.com/in/irishavmishra"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              className="rgbsplit noline"
-              href="https://github.com/irishavmishra"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              className="rgbsplit noline"
-              href="https://x.com/irishavmishra"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              X (Twitter)
-            </a>
-          </li>
-        </ul>
+          <a
+            className="rgbsplit noline flex items-center gap-2"
+            href="mailto:onlyrishavmishra@gmail.com"
+            aria-label="Email Rishav Mishra"
+          >
+            <FaEnvelope className="opacity-70 text-[1.1em] mt-[-2px]" />
+            Email
+          </a>
+          <a
+            className="rgbsplit noline flex items-center gap-2"
+            href="https://www.linkedin.com/in/irishavmishra"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Rishav Mishra on LinkedIn"
+          >
+            <FaLinkedin className="opacity-70 text-[1.1em] mt-[-2px]" />
+            LinkedIn
+          </a>
+          <a
+            className="rgbsplit noline flex items-center gap-2"
+            href="https://github.com/irishavmishra"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Rishav Mishra on GitHub"
+          >
+            <FaGithub className="opacity-70 text-[1.1em] mt-[-2px]" />
+            GitHub
+          </a>
+          <a
+            className="rgbsplit noline flex items-center gap-2"
+            href="https://x.com/irishavmishra"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Rishav Mishra on X (Twitter)"
+          >
+            <FaXTwitter className="opacity-70 text-[1.1em] mt-[-2px]" />
+            X (Twitter)
+          </a>
+        </nav>
       </div>
-      
+
       <style jsx>{`
         .hello {
           transform: rotate(17deg) scale(1);

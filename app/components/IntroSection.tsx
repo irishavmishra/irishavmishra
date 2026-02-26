@@ -1,3 +1,5 @@
+import { FaEnvelope, FaLinkedin, FaGithub, FaXTwitter } from 'react-icons/fa6';
+
 export default function IntroSection() {
   return (
     <section className="push" data-section="intro">
@@ -13,38 +15,39 @@ export default function IntroSection() {
         Based in Bhopal. Open to remote and relocation.
       </p>
 
-      <p>
+      <p className="flex flex-wrap gap-4 items-center">
         <a
-          className="rgbsplit"
+          className="rgbsplit noline flex items-center gap-1"
           href="mailto:onlyrishavmishra@gmail.com"
         >
+          <FaEnvelope className="opacity-70 text-[1.1em] mt-[-2px]" />
           Email
         </a>
-        {' '}·{' '}
         <a
-          className="rgbsplit"
+          className="rgbsplit noline flex items-center gap-1"
           href="https://www.linkedin.com/in/irishavmishra/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
         >
+          <FaLinkedin className="opacity-70 text-[1.1em] mt-[-2px]" />
           LinkedIn
         </a>
-        {' '}·{' '}
         <a
-          className="rgbsplit"
+          className="rgbsplit noline flex items-center gap-1"
           href="https://github.com/irishavmishra"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
         >
+          <FaGithub className="opacity-70 text-[1.1em] mt-[-2px]" />
           GitHub
         </a>
-        {' '}·{' '}
         <a
-          className="rgbsplit"
+          className="rgbsplit noline flex items-center gap-1"
           href="https://x.com/irishavmishra"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
         >
+          <FaXTwitter className="opacity-70 text-[1.1em] mt-[-2px]" />
           X (Twitter)
         </a>
       </p>

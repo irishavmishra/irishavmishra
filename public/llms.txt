@@ -1,10 +1,12 @@
 # Rishav Mishra
 
-> Full Stack Developer from Bhopal, India. Building web applications using React, Next.js, Node.js, PostgreSQL, and AI.
+> Full Stack Developer and AI Developer from Bhopal, India. Building web applications and AI-powered tools using React, Next.js, Node.js, PostgreSQL, and LLMs (ChatGPT, Claude, Gemini).
 
 ## About
 
-Rishav Mishra is a Full Stack Developer who builds software that simplifies and automates real-world business operations. He works across the full stack — frontend, backend, database, and deployment. He has shipped 6 projects with 100K+ combined user visits.
+Rishav Mishra is a Full Stack Developer and AI Developer who builds software that simplifies and automates real-world business operations. He works across the full stack — frontend, backend, database, deployment, and AI/LLM integration. He has shipped 6 projects with 100K+ combined user visits.
+
+He works with AI tools and LLMs including ChatGPT (OpenAI), Claude (Anthropic), and Gemini (Google). He builds AI agents, implements RAG pipelines, does prompt engineering, and integrates LLM APIs into production applications. He is experienced in vibe coding and AI-assisted development using tools like Cursor.
 
 Based in Bhopal, India. Available for full-time roles, freelance, and contract projects. Open to remote work and relocation.
 
@@ -19,14 +21,18 @@ Based in Bhopal, India. Available for full-time roles, freelance, and contract p
 
 ## Skills
 
-React, Next.js, Node.js, PostgreSQL, TypeScript, JavaScript, tRPC, Cloudflare Workers, REST APIs, FastAPI, Python, FFmpeg, AI Integration, Drizzle ORM, Zod, Better Auth, IndexedDB, Edge Computing
+### Core Development
+React, Next.js, Node.js, PostgreSQL, TypeScript, JavaScript, tRPC, Cloudflare Workers, REST APIs, FastAPI, Python, FFmpeg, Drizzle ORM, Zod, Better Auth, IndexedDB, Edge Computing, AWS, Zustand, Redux, Recoil, TanStack
+
+### AI & LLM
+ChatGPT, OpenAI API, Anthropic Claude, Google Gemini, AI Agent Development, RAG (Retrieval Augmented Generation), Prompt Engineering, Fine Tuning, LLM Integration, AI Coding Tools, Cursor, Vibe Coding
 
 ## Projects
 
 - Rently: Property management app for small landlords — https://rently.property
 - Fiscally: Income tax return filing platform for India — https://fiscally.online
 - CalcTrust: Financial calculator platform for U.S. salary and tax estimation, 100K+ visits — https://calctrust.com
-- ReelBrain: AI service that converts long videos into short vertical clips — https://github.com/irishavmishra/reelbrain
+- ReelBrain: AI service that converts long videos into short vertical clips using AI speaker detection and WhisperX — https://github.com/irishavmishra/reelbrain
 - FancyText: Unicode text styling tool, 100K+ visits — https://fancytext-gen.vercel.app/
 
 ## Availability

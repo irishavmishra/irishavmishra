@@ -37,17 +37,20 @@ export default function Header() {
         top: scrolled ? '12px' : '2rem',
       }}
     >
-      <div className="wrap flex justify-center">
-        <span
+      <nav aria-label="Main navigation" className="wrap flex justify-center">
+        <a
+          href="/"
           className="me noline inline-block font-bold text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] relative select-none"
-          role="button"
+          aria-label="Rishav Mishra - Home"
         >
           <span
             className="nav-text inline-flex items-center transition-all duration-500 ease-out"
             style={{
-              fontFamily: '"Satoshi", system-ui, -apple-system, sans-serif',
-              fontWeight: 600,
-              letterSpacing: '-0.02em',
+              fontFamily: '"Playfair Display", serif',
+              fontWeight: 500,
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              fontSize: scrolled ? '0.9em' : '1em',
               padding: scrolled ? '0.5rem 1rem' : '0',
               borderRadius: scrolled ? '100px' : '0',
               backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
@@ -61,8 +64,8 @@ export default function Header() {
           >
             RISHAV&nbsp;<span className="crest">MISHRA</span>
           </span>
-        </span>
-      </div>
+        </a>
+      </nav>
     </header>
   );
 }

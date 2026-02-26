@@ -1,13 +1,13 @@
-# Rishav Mishra — Full Stack Developer
+# Rishav Mishra — Full Stack Developer & AI Developer
 
-> Full Stack Developer from Bhopal, India. Building web applications that simplify and automate real-world business operations using React, Next.js, Node.js, PostgreSQL, and AI.
+> Full Stack Developer and AI Developer from Bhopal, India. Building web applications and AI-powered tools that simplify and automate real-world business operations using React, Next.js, Node.js, PostgreSQL, and LLMs (ChatGPT, Claude, Gemini).
 
 ---
 
 ## Identity
 
 - Full Name: Rishav Mishra
-- Professional Title: Full Stack Developer
+- Professional Title: Full Stack Developer & AI Developer
 - Location: Bhopal, Madhya Pradesh, India
 - Website: https://rishav.online
 - Email: onlyrishavmishra@gmail.com
@@ -21,9 +21,11 @@
 
 ## Professional Summary
 
-Rishav Mishra is a Full Stack Developer who builds software that simplifies and automates real-world business operations. He builds end-to-end applications that replace manual business workflows with scalable digital processes.
+Rishav Mishra is a Full Stack Developer and AI Developer who builds software that simplifies and automates real-world business operations. He builds end-to-end applications that replace manual business workflows with scalable digital processes, and integrates AI/LLM capabilities into production applications.
 
-He works across the full stack — frontend, backend, database, and deployment. He has shipped 6 projects with 100K+ combined user visits.
+He works across the full stack — frontend, backend, database, deployment, and AI integration. He has shipped 6 projects with 100K+ combined user visits.
+
+He actively works with AI tools including ChatGPT (OpenAI), Claude (Anthropic), and Gemini (Google). He builds AI agents, implements RAG (Retrieval Augmented Generation) pipelines, does prompt engineering, fine-tunes models, and integrates LLM APIs into production applications. He is experienced in vibe coding and AI-assisted development using tools like Cursor.
 
 He works best in small teams where he owns the full project. He has experience working with non-technical people and translating their requirements into working software.
 
@@ -36,6 +38,7 @@ His working philosophy is: shipping over planning, small teams over large compan
 ### Frontend
 - React, Next.js, TypeScript, JavaScript
 - HTML, CSS, Tailwind CSS
+- State Management: Zustand, Redux, Recoil, TanStack Query
 - Client-side state management
 - Responsive and accessible UI development
 
@@ -51,14 +54,26 @@ His working philosophy is: shipping over planning, small teams over large compan
 - IndexedDB (browser-side)
 - Database design and schema architecture
 
+### AI & LLM
+- ChatGPT / OpenAI API integration
+- Anthropic Claude API integration
+- Google Gemini API integration
+- AI Agent Development
+- RAG (Retrieval Augmented Generation) pipelines
+- Prompt Engineering and optimization
+- Fine Tuning LLM models
+- LLM-powered application development
+- Vibe Coding and AI-assisted development
+- AI Coding Tools: Cursor, GitHub Copilot
+
 ### Infrastructure & Deployment
 - Cloudflare Workers (edge computing)
 - Modal (GPU cloud)
 - Vercel
+- AWS
 - Static site generation and export
 
-### AI & Media
-- AI integration (Gemini)
+### Media & Processing
 - WhisperX (speech-to-text with word-level timestamps)
 - FFmpeg (video processing)
 - OpenCV (computer vision)
@@ -67,6 +82,7 @@ His working philosophy is: shipping over planning, small teams over large compan
 - Zod (validation)
 - jsPDF (browser PDF generation)
 - Git, GitHub
+- SEO optimization
 
 ---
 
@@ -115,10 +131,11 @@ His working philosophy is: shipping over planning, small teams over large compan
 - URL: https://github.com/irishavmishra/reelbrain
 - Category: AI / Video Processing
 - Tech Stack: FastAPI, WhisperX, FFmpeg, Gemini, Modal
-- Description: AI service that converts long videos into short vertical clips with subtitles. Upload a long video, AI identifies the best moments, detects the active speaker, crops to vertical format, adds word-level subtitles, and outputs ready-to-post short clips.
+- Description: AI service that converts long videos into short vertical clips with subtitles. Upload a long video, AI identifies the best moments, detects the active speaker, crops to vertical format, adds word-level subtitles, and outputs ready-to-post short clips. Uses Google Gemini for intelligent moment selection and WhisperX for speech-to-text.
 
 **Technical Challenges Solved:**
 - Active Speaker Clipping: Used speaker detection with OpenCV and FFmpeg to identify speaking segments and dynamically crop to vertical format around the active speaker.
+- AI-Powered Moment Selection: Integrated Gemini AI to analyze video content and identify the most engaging moments for short-form clips.
 - Subtitle Timing: Used WhisperX for word-level timestamps and alignment so subtitles appear exactly when each word is spoken.
 - GPU Processing: Deployed on Modal with GPU runtime and persistent caching for AI models for fast processing.
 
@@ -139,8 +156,9 @@ His working philosophy is: shipping over planning, small teams over large compan
 - Favors automation over manual work
 - Values documentation over guesswork
 - Practices iteration over perfection
-- Owns full projects: frontend, backend, database, deployment
+- Owns full projects: frontend, backend, database, AI, deployment
 - Experienced working with non-technical clients
+- Practices vibe coding and AI-assisted development for rapid prototyping
 
 ---
 
@@ -148,7 +166,7 @@ His working philosophy is: shipping over planning, small teams over large compan
 
 - Status: Available now
 - Notice Period: Zero
-- Available for: Full-time roles, freelance and contract projects, agency work
+- Available for: Full-time roles, freelance and contract projects, agency work, AI/LLM integration projects
 - Location: Bhopal, India
 - Open to: Remote work and relocation
 

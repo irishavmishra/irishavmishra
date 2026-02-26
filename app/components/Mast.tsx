@@ -70,6 +70,8 @@ export default function Mast() {
         <div
           ref={bgRef}
           className="absolute inset-0 right-[-2%] bg-no-repeat z-[1] will-change-transform"
+          role="img"
+          aria-label="Rishav Mishra - Full Stack Developer"
           style={{
             backgroundImage: 'url(/rishav-mishra.webp)',
             backgroundPosition: 'right 42%',

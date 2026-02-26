@@ -8,8 +8,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Rishav Mishra – Full Stack Developer | React, Node.js, AI",
-  description: "Rishav Mishra is a Full Stack Developer from Bhopal, India. He builds web applications using React, Next.js, Node.js, PostgreSQL, and AI. 6 projects shipped, 100K+ user visits. Available for hire.",
+  title: "Rishav Mishra - Full Stack Developer | React, Node.js, AI",
+  description: "Rishav Mishra is a Full Stack Developer and AI Developer from Bhopal, India. He builds web applications and AI-powered tools using React, Next.js, Node.js, PostgreSQL, and LLMs (ChatGPT, Claude, Gemini). 6 projects shipped, 100K+ user visits. Available for hire.",
   keywords: [
     "Rishav Mishra",
     "Rishav Mishra developer",
@@ -25,9 +25,25 @@ export const metadata: Metadata = {
     "TypeScript Developer",
     "Web Developer India",
     "AI Developer",
+    "AI Developer India",
+    "AI Engineer",
+    "LLM Developer",
+    "ChatGPT Developer",
+    "Claude Developer",
+    "Gemini Developer",
+    "OpenAI API Developer",
+    "Anthropic Claude Developer",
+    "RAG Developer",
+    "Prompt Engineering",
+    "AI Agent Developer",
+    "Vibe Coding",
+    "AI Coding Tools",
+    "Cursor AI",
     "hire full stack developer",
+    "hire AI developer India",
     "hire React developer India",
     "freelance developer India",
+    "freelance AI developer",
     "Bhopal software developer",
     "irishavmishra",
   ],
@@ -42,24 +58,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rishav.online",
-    title: "Rishav Mishra – Full Stack Developer | React, Node.js, AI",
+    title: "Rishav Mishra - Full Stack Developer | React, Node.js, AI",
     description: "Full Stack Developer from Bhopal, India. Building web applications with React, Next.js, Node.js, PostgreSQL, and AI. 6 projects shipped, 100K+ user visits.",
     siteName: "Rishav Mishra",
     images: [
       {
-        url: "/rishav-mishra.webp",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Rishav Mishra – Full Stack Developer",
+        alt: "Rishav Mishra - Full Stack Developer | React, Node.js, AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rishav Mishra – Full Stack Developer | React, Node.js, AI",
+    title: "Rishav Mishra - Full Stack Developer | React, Node.js, AI",
     description: "Full Stack Developer from Bhopal, India. Building web apps with React, Next.js, Node.js, PostgreSQL, and AI. 6 projects shipped, 100K+ user visits.",
     creator: "@irishavmishra",
-    images: ["/rishav-mishra.webp"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -72,9 +88,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: {
-    "google-site-verification": "REPLACE_WITH_YOUR_VERIFICATION_CODE",
-  },
+
 };
 
 // JSON-LD Structured Data for Google Knowledge Panel & Rich Results
@@ -89,7 +103,7 @@ const personJsonLd = {
   image: "https://rishav.online/rishav-mishra.webp",
   jobTitle: "Full Stack Developer",
   description:
-    "Full Stack Developer who builds web applications that simplify and automate real-world business operations using React, Node.js, PostgreSQL, and AI.",
+    "Full Stack Developer and AI Developer who builds web applications and AI-powered tools that simplify and automate real-world business operations using React, Node.js, PostgreSQL, and LLMs like ChatGPT, Claude, and Gemini.",
   email: "onlyrishavmishra@gmail.com",
   telephone: "+917047420892",
   address: {
@@ -112,10 +126,23 @@ const personJsonLd = {
     "TypeScript",
     "JavaScript",
     "Full Stack Development",
+    "Frontend Development",
     "REST APIs",
     "tRPC",
     "Cloudflare Workers",
     "AI Integration",
+    "AI Agent Development",
+    "ChatGPT",
+    "OpenAI API",
+    "Anthropic Claude",
+    "Google Gemini",
+    "LLM Integration",
+    "RAG (Retrieval Augmented Generation)",
+    "Prompt Engineering",
+    "Fine Tuning",
+    "Vibe Coding",
+    "AI Coding Tools",
+    "Cursor",
     "FastAPI",
     "Python",
     "FFmpeg",
@@ -123,11 +150,33 @@ const personJsonLd = {
     "Database Design",
     "Authentication Systems",
     "Edge Computing",
+    "AWS",
+    "SEO",
+    "Zod",
+    "Zustand",
+    "Redux",
+    "Recoil",
+    "TanStack",
+    "Git",
+    "GitHub",
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
-    name: "Bhopal, India",
+    name: "Government Arts And Commerce Naveen College",
+    sameAs: "https://govaccmh.ac.in/",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Opp, Lower Lake, Jahangirabad, Bhopal",
+      addressRegion: "Madhya Pradesh",
+      addressCountry: "India"
+    },
+    parentOrganization: {
+      "@type": "CollegeOrUniversity",
+      name: "Barkatullah University",
+      sameAs: "https://www.bubhopal.ac.in/"
+    }
   },
+
   worksFor: {
     "@type": "Organization",
     name: "Freelance / Available for Hire",
@@ -145,7 +194,7 @@ const websiteJsonLd = {
   name: "Rishav Mishra",
   url: "https://rishav.online",
   description:
-    "Portfolio of Rishav Mishra – Full Stack Developer from Bhopal, India.",
+    "Portfolio of Rishav Mishra - Full Stack Developer from Bhopal, India.",
   publisher: {
     "@id": "https://rishav.online/#person",
   },
@@ -156,13 +205,13 @@ const profilePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   "@id": "https://rishav.online/#profilepage",
-  name: "Rishav Mishra – Full Stack Developer",
+  name: "Rishav Mishra - Full Stack Developer",
   url: "https://rishav.online",
   mainEntity: {
     "@id": "https://rishav.online/#person",
   },
   dateCreated: "2025-01-01",
-  dateModified: "2026-02-26",
+  dateModified: "2026-02-27",
   description:
     "Portfolio and professional profile of Rishav Mishra, a Full Stack Developer from Bhopal, India who builds web applications using React, Node.js, PostgreSQL, and AI.",
 };
@@ -247,6 +296,19 @@ const projectsJsonLd = {
   ],
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Rishav Mishra",
+      item: "https://rishav.online",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -272,6 +334,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
 
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -280,6 +346,7 @@ export default function RootLayout({
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400..800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
         {/* Manifest & Discovery */}
         <link rel="manifest" href="/manifest.json" />

@@ -340,9 +340,9 @@ export default function CVTimeline() {
                                 <div className="flex flex-col gap-8 md:gap-10">
                                   {project.technicalDetails.map((detail, i) => (
                                     <div key={i} className="problem-item">
-                                      <h5 className="text-[1rem] md:text-[1.1rem] font-semibold text-[var(--color-fill)] mb-3">
+                                      <h4 className="text-[1rem] md:text-[1.1rem] font-semibold text-[var(--color-fill)] mb-3">
                                         {detail.title}
-                                      </h5>
+                                      </h4>
                                       <div className="space-y-2">
                                         <p className="text-[0.95rem] md:text-[1rem] leading-[1.6] text-[var(--color-fill)] opacity-75 m-0">
                                           <strong className="opacity-60">Problem:</strong> {detail.problem}
