@@ -210,8 +210,8 @@ const profilePageJsonLd = {
   mainEntity: {
     "@id": "https://rishav.online/#person",
   },
-  dateCreated: "2025-01-01",
-  dateModified: "2026-02-27",
+  dateCreated: "2020-06-21T15:15:42+05:30",
+  dateModified: "2026-02-27T01:22:38+05:30",
   description:
     "Portfolio and professional profile of Rishav Mishra, a Full Stack Developer from Bhopal, India who builds web applications using React, Node.js, PostgreSQL, and AI.",
 };
