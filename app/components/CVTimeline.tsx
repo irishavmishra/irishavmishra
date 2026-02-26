@@ -2,141 +2,158 @@
 
 import { useState } from 'react';
 
-interface Problem {
-  title: string;
-  solution: string;
-}
-
 interface ProjectEntry {
   title: string;
+  tagline: string;
   description: string[];
   techStack: string;
-  problems?: Problem[];
+  links: { label: string; url: string }[];
+  technicalDetails?: {
+    title: string;
+    problem: string;
+    solution: string;
+    result: string;
+  }[];
 }
 
 const projectsData: ProjectEntry[] = [
   {
     title: 'Rently',
+    tagline: 'Property management app for small landlords.',
     description: [
-      'Property management platform for small landlords managing 1 to 20 rental units.',
-      'Automates rent collection, maintenance requests, and financial reporting through dedicated landlord and tenant portals with real time payment tracking and document management.'
+      'Landlords add properties, manage tenants, create leases, and track rent payments. Tenants get a separate portal to view lease details and submit maintenance requests.'
     ],
-    techStack: 'Next.js, Nitro, tRPC, PostgreSQL (Neon), Cloudflare Workers, Better Auth.',
-    problems: [
+    techStack: 'Next.js, Nitro, tRPC, PostgreSQL (Neon), Cloudflare Workers, Better Auth',
+    links: [
+      { label: 'Live →', url: 'https://rently.property' }
+    ],
+    technicalDetails: [
       {
-        title: 'Edge Database Connectivity on Cloudflare Workers',
-        solution: 'Standard PostgreSQL drivers use TCP connections which are not supported by Cloudflare Workers runtime. I implemented Neons HTTP based driver with Drizzle ORM to enable stateless database queries from the edge without connection pooling, while maintaining relational integrity and foreign key constraints.'
+        title: 'Edge Database Connectivity',
+        problem: 'Standard PostgreSQL drivers do not work on Cloudflare Workers because they need TCP connections.',
+        solution: 'Used Neon\'s HTTP driver with Drizzle ORM for stateless database queries from the edge.',
+        result: 'App runs globally on edge servers with full database access.'
       },
       {
-        title: 'Dual Portal Authentication System',
-        solution: 'Landlords required full account access while tenants needed invite only limited portal access without full registration. I implemented Better Auth for landlords with email verification and OAuth, and a custom JWT session system for tenants with OTP based login and magic link invites, both operating on the same database with isolated session logic.'
+        title: 'Dual Authentication System',
+        problem: 'Landlords need full accounts. Tenants need invite-only limited access without registration.',
+        solution: 'Built two auth flows. Better Auth with OAuth for landlords. Custom JWT with OTP and magic links for tenants. Both share the same database with isolated sessions.',
+        result: 'Two different user types, one clean system.'
       },
       {
-        title: 'Real Time Subscription Enforcement',
-        solution: 'Feature access needed to be restricted dynamically based on subscription tier limits such as number of units and storage usage. I built a usage based access layer that validates limits before every create operation and caches subscription metadata to reduce repeated database queries.'
+        title: 'Subscription Enforcement',
+        problem: 'Features needed to be restricted based on subscription plan like number of units and storage limit.',
+        solution: 'Built a usage checker that validates limits before every create action. Cached subscription data to reduce database calls.',
+        result: 'Users automatically blocked when they hit plan limits. Upgrade flow built in.'
       }
     ]
   },
   {
     title: 'Fiscally',
+    tagline: 'Income tax return filing platform for India.',
     description: [
-      'Client side income tax return filing platform for India.',
-      'Provides a guided interface for preparing ITR forms (ITR 1 to ITR 7) with support for multi source data import and reconciliation directly within the browser.'
+      'Users prepare ITR forms (ITR-1 to ITR-7) directly in the browser. Imports data from multiple government sources, matches and reconciles conflicts, calculates tax, and generates PDF for filing.',
+      'Built with a Chartered Accountant to make sure tax rules are accurate.'
     ],
-    techStack: 'Next.js, IndexedDB, Zod, jsPDF.',
-    problems: [
+    techStack: 'Next.js, IndexedDB, Zod, jsPDF',
+    links: [
+      { label: 'Live →', url: 'https://fiscally.online' }
+    ],
+    technicalDetails: [
       {
         title: 'Multi Source Data Reconciliation',
-        solution: 'Income data imported from Prefill JSON, AIS, and Form 26AS often had conflicting values and inconsistent formatting. I built a reconciliation engine with source priority rules, tolerance based comparisons, and severity classification to automatically resolve mismatches between data sources.'
+        problem: 'Income data from three government sources often had different values for the same item.',
+        solution: 'Built a reconciliation engine with source priority rules and tolerance based comparisons to automatically resolve mismatches.',
+        result: 'Users see clean merged data instead of confusing conflicts.'
       },
       {
-        title: 'Parsing Form 26AS Text Files',
-        solution: 'The Income Tax Portal provides Form 26AS as caret delimited text with multiple inconsistent sections. I implemented a custom parser that detects section markers, handles missing transaction cases, and maps extracted values into a unified internal schema.'
+        title: 'Form 26AS Parser',
+        problem: 'Government provides Form 26AS as a messy text file with inconsistent formatting.',
+        solution: 'Built a custom parser that detects section markers, handles missing data, and converts everything into a clean internal format.',
+        result: 'Users import Form 26AS in one click.'
       },
       {
-        title: 'Client Side PDF Generation',
-        solution: 'Required generation of multi page income computation documents with headers, footers, and tabular tax breakdowns entirely in the browser. Implemented a structured PDF generation layer using jsPDF for professional formatting without server side processing.'
+        title: 'Browser PDF Generation',
+        problem: 'Needed professional multi-page tax documents with headers, footers, and tables without a server.',
+        solution: 'Used jsPDF to generate formatted PDFs entirely in the browser.',
+        result: 'Users download their tax computation document instantly.'
       }
     ]
   },
   {
     title: 'CalcTrust',
+    tagline: 'Financial calculator platform for U.S. salary and tax estimation. 100K+ visits.',
     description: [
-      'Financial calculator platform with 270 plus programmatic pages for U.S. salary and tax estimation.',
-      'Implements federal and state tax calculations with static edge deployment for fast global access.'
+      '270+ calculator pages covering salary breakdowns and paycheck estimations for all 50 U.S. states. Uses official IRS bracket data and state tax rules.',
+      'Deployed on edge servers for fast global access.'
     ],
-    techStack: 'Next.js, Cloudflare Workers.',
-    problems: [
+    techStack: 'Next.js, Cloudflare Workers',
+    links: [
+      { label: 'Live →', url: 'https://calctrust.com' }
+    ],
+    technicalDetails: [
       {
-        title: 'Progressive Tax Calculation Accuracy',
-        solution: 'Federal and state taxes use marginal bracket systems with deductions and FICA limits. I implemented a tax engine using official IRS bracket data and state tax rules, supporting graduated tax states through marginal rate calculations.'
+        title: 'Tax Calculation Engine',
+        problem: 'U.S. taxes use marginal brackets with different rules per state.',
+        solution: 'Implemented tax engine using official IRS data and state rules with support for graduated rate calculations.',
+        result: 'Accurate tax breakdowns for all 50 states.'
       },
       {
-        title: 'Maintaining 270 Plus Pages Without Duplication',
-        solution: 'Instead of manually creating calculator pages, I built a generator system that produces salary breakdown and state specific paycheck pages from centralized data definitions.'
+        title: '270+ Pages Without Duplication',
+        problem: 'Creating 270 pages manually would be unmaintainable.',
+        solution: 'Built a generator that produces pages from centralized data definitions. Change data once, all pages update.',
+        result: '270+ pages maintained from one source.'
       },
       {
-        title: 'Zero Backend Search System',
-        solution: 'Implemented a client side search index capable of matching queries such as 50k in Texas or 25 per hour yearly with zero API dependency, using memoized scoring across titles, slugs, and numeric values.'
+        title: 'Zero Backend Search',
+        problem: 'Needed search across all pages without a server or API.',
+        solution: 'Built client side search index that matches queries like "50k in Texas" or "25 per hour yearly" using scored matching.',
+        result: 'Instant search with zero server cost.'
       }
     ]
   },
   {
     title: 'ReelBrain',
+    tagline: 'AI service that converts long videos into short vertical clips with subtitles.',
     description: [
-      'AI powered backend service for converting long form videos into short, subtitle ready vertical clips.',
-      'Processes video input from S3, identifies high value segments, applies active speaker detection, and generates formatted output clips.'
+      'Upload a long video. AI identifies the best moments, detects the active speaker, crops to vertical format, adds word-level subtitles, and outputs ready-to-post short clips.'
     ],
-    techStack: 'FastAPI, WhisperX, FFmpeg, Gemini, Modal.',
-    problems: [
-      {
-        title: 'Active Speaker Focused Clipping',
-        solution: 'Extracting relevant moments from long form video required identifying speaking segments and dynamically reframing clips into vertical format. Implemented Active Speaker Detection with OpenCV and FFmpeg to crop around speaking subjects in real time.'
-      },
-      {
-        title: 'Speech Alignment for Subtitle Timing',
-        solution: 'Used WhisperX for word level timestamping and alignment to generate subtitle ready clips with accurate speech synchronization.'
-      },
-      {
-        title: 'GPU Based Processing Pipeline',
-        solution: 'Deployed the video processing service on Modal with GPU backed runtime and persistent volume caching for model reuse across executions.'
-      }
-    ]
-  },
-  {
-    title: 'Zaply (In Progress)',
-    description: [
-      'Browser based design editor for creating social media graphics with AI assisted image generation.'
+    techStack: 'FastAPI, WhisperX, FFmpeg, Gemini, Modal',
+    links: [
+      { label: 'GitHub →', url: 'https://github.com/irishavmishra/reelbrain' }
     ],
-    techStack: 'Next.js, Fabric.js, Hono, React Query.',
-    problems: [
+    technicalDetails: [
       {
-        title: 'Selection Aware Canvas Editing',
-        solution: 'Maintaining UI state across text, shapes, and image objects required centralized selection tracking. Implemented an editor command layer to synchronize tool panels with the active Fabric.js object.'
+        title: 'Active Speaker Clipping',
+        problem: 'Long videos have multiple speakers and dead moments. Need to find and crop the best parts.',
+        solution: 'Used speaker detection with OpenCV and FFmpeg to identify speaking segments and dynamically crop to vertical format around the active speaker.',
+        result: 'Output clips are focused and ready for social media posting.'
       },
       {
-        title: 'Multi Source Image Handling',
-        solution: 'Handled insertion of user uploaded images, Unsplash URLs, and AI generated assets through a unified image pipeline with cross origin support.'
+        title: 'Subtitle Timing',
+        problem: 'Subtitles need to match speech exactly at the word level.',
+        solution: 'Used WhisperX for word level timestamps and alignment.',
+        result: 'Subtitles appear and disappear exactly when each word is spoken.'
+      },
+      {
+        title: 'GPU Processing',
+        problem: 'Video processing is heavy and slow on normal servers.',
+        solution: 'Deployed on Modal with GPU runtime and persistent caching for AI models.',
+        result: 'Fast processing without managing servers.'
       }
     ]
   },
   {
     title: 'FancyText',
+    tagline: 'Unicode text styling tool. 100K+ user visits.',
     description: [
-      'Unicode based text styling tool with over 100K user visits.',
-      'Generates multiple decorated text variants that can be copied and used across games, social profiles, chats, and bios.'
+      'Type normal text. Get dozens of styled versions using Unicode characters. Copy and paste anywhere - social media, games, bios, chats.'
     ],
-    techStack: 'HTML, CSS, JavaScript.',
-    problems: [
-      {
-        title: 'Unicode Style Generation',
-        solution: 'Implemented transformation maps to convert plain input into styled Unicode variants while preserving unsupported characters.'
-      },
-      {
-        title: 'Real Time Multi Output Rendering',
-        solution: 'Optimized generation logic to update dozens of styled outputs instantly from a single input without noticeable UI lag.'
-      }
-    ]
+    techStack: 'HTML, CSS, JavaScript',
+    links: [
+      { label: 'Live →', url: 'https://fancytext-gen.vercel.app/' }
+    ],
+    technicalDetails: []
   }
 ];
 
@@ -144,7 +161,6 @@ const INITIAL_PROJECTS = 3;
 
 export default function CVTimeline() {
   const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
-  const [isDetailed, setIsDetailed] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   const visibleProjects = showAll ? projectsData : projectsData.slice(0, INITIAL_PROJECTS);
@@ -152,42 +168,40 @@ export default function CVTimeline() {
   const toggleExpand = (index: number) => {
     setExpandedIndices(prev => {
       const isCurrentlyExpanded = prev.includes(index);
-      const newIndices = isCurrentlyExpanded
-        ? prev.filter(i => i !== index)
-        : [...prev, index];
-
-      if (newIndices.length === projectsData.length) {
-        setIsDetailed(true);
-      } else if (newIndices.length === 0) {
-        setIsDetailed(false);
+      if (isCurrentlyExpanded) {
+        return prev.filter(i => i !== index);
       }
-      return newIndices;
+      return [...prev, index];
     });
-  };
-
-  const handleMasterToggle = (checked: boolean) => {
-    setIsDetailed(checked);
-    if (checked) {
-      setExpandedIndices(projectsData.map((_, i) => i));
-    } else {
-      setExpandedIndices([]);
-    }
   };
 
   const handleViewAll = () => {
     setShowAll(true);
   };
 
+  const handleMasterToggle = (checked: boolean) => {
+    if (checked) {
+      // Get indices of all visible projects that have technical details
+      const indicesWithDetails = visibleProjects
+        .map((p, i) => p.technicalDetails && p.technicalDetails.length > 0 ? i : -1)
+        .filter(i => i !== -1);
+      setExpandedIndices(indicesWithDetails);
+    } else {
+      setExpandedIndices([]);
+    }
+  };
+
+  const isAllExpanded = expandedIndices.length > 0 && expandedIndices.length === visibleProjects.filter(p => p.technicalDetails && p.technicalDetails.length > 0).length;
+
   return (
     <section className="cv-timeline pb-24" data-section="cv">
-      {/* Container restricted and aligned as original simple list */}
       <div className="lg:ml-[var(--centerMargin)] lg:pl-0 pl-[32px] sm:pl-[48px] pr-4 sm:pr-6 lg:pr-0">
 
         <p className="cv-intro text-[1.25rem] md:text-[1.5rem] leading-[1.6] font-normal mb-16 lg:mb-24 opacity-80 max-w-4xl tracking-tight text-[var(--color-fill)]">
-          I have built over the last few years, focused on automating operational workflows for individuals and small businesses.
+          Here are the projects I have built and shipped.
         </p>
 
-        {/* Master Presentational Toggle Button */}
+        {/* Master Toggle Button */}
         <label className="option-toggle flex items-center justify-start gap-4 cursor-pointer select-none font-medium mb-16 lg:mb-24"
           style={{
             '--switchH': '2.6rem',
@@ -198,14 +212,14 @@ export default function CVTimeline() {
             '--speed': '0.24s'
           } as React.CSSProperties}
         >
-          <span className={`label transition-colors duration-[var(--speed)] ${!isDetailed ? 'text-[var(--color-fill)]' : 'text-[var(--color-fill-light)] opacity-60'}`}>
+          <span className={`label transition-colors duration-[var(--speed)] ${!isAllExpanded ? 'text-[var(--color-fill)]' : 'text-[var(--color-fill-light)] opacity-60'}`}>
             Simple
           </span>
           <div className="toggle relative cursor-pointer">
             <input
               type="checkbox"
               className="opacity-0 absolute w-full h-full cursor-pointer z-10"
-              checked={isDetailed}
+              checked={isAllExpanded}
               onChange={(e) => handleMasterToggle(e.target.checked)}
             />
             <div className="switch relative block transition-all duration-[var(--speed)]"
@@ -220,14 +234,14 @@ export default function CVTimeline() {
               <div
                 className="absolute top-[var(--inset)] w-[var(--knobSize)] h-[var(--knobSize)] rounded-full transition-all duration-[var(--speed)]"
                 style={{
-                  left: isDetailed ? 'calc(var(--switchW) - var(--knobSize) - var(--inset))' : 'var(--inset)',
+                  left: isAllExpanded ? 'calc(var(--switchW) - var(--knobSize) - var(--inset))' : 'var(--inset)',
                   backgroundColor: 'color-mix(in srgb,currentColor,var(--color-bg) 93%)',
                   boxShadow: 'inset 0 0.1rem 0.1rem #ffffffbf, inset 0 -0.1rem 0.1rem color-mix(in srgb,currentColor,transparent 81%), 0 0.2rem 0.2rem color-mix(in srgb,currentColor,transparent 62%), 0 0.4rem 0.4rem color-mix(in srgb,currentColor,transparent 62%)'
                 }}
               />
             </div>
           </div>
-          <span className={`label transition-colors duration-[var(--speed)] ${isDetailed ? 'text-[var(--color-fill)]' : 'text-[var(--color-fill-light)] opacity-60'}`}>
+          <span className={`label transition-colors duration-[var(--speed)] ${isAllExpanded ? 'text-[var(--color-fill)]' : 'text-[var(--color-fill-light)] opacity-60'}`}>
             Detailed
           </span>
         </label>
@@ -242,7 +256,6 @@ export default function CVTimeline() {
             return (
               <li key={index} className="cv-item relative w-full mb-12 lg:mb-16">
 
-                {/* Timeline Dot on vertical line */}
                 <div className={`
                   timeline-node absolute top-[38px]
                   left-[-18px] sm:left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)] 
@@ -253,25 +266,36 @@ export default function CVTimeline() {
                   ${isExpanded ? 'shadow-[0_0_12px_var(--color-fill)] border-[var(--color-fill)]' : 'border-[var(--color-fill)]/70'}
                 `} />
 
-                {/* Timeline Line Segment perfectly connecting to the next item */}
                 {!isLast && (
                   <div className="absolute w-[1px] bg-[var(--color-fill)] opacity-[0.25] z-10
                     left-[-18px] sm:left-[-24px] lg:left-[calc(var(--innerPad)*-0.5)]
                     top-[45px] h-[calc(100%+48px)] lg:h-[calc(100%+64px)] -translate-x-1/2" />
                 )}
 
-                {/* Project Box (max-w matching original) */}
                 <div className="project-item max-w-4xl relative">
                   <div className="project-card transition-all duration-300 overflow-hidden relative">
 
-                    {/* Box Header */}
                     <div className="px-0 pt-6 md:pt-8 pb-3 md:pb-4">
-                      <h3 className="text-xl md:text-[1.5rem] font-semibold text-[var(--color-fill)] m-0 leading-tight">
-                        {project.title}
-                      </h3>
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <h3 className="text-xl md:text-[1.5rem] font-semibold text-[var(--color-fill)] m-0 leading-tight">
+                          {project.title}
+                        </h3>
+                        {project.links && project.links.length > 0 && (
+                          <a
+                            href={project.links[0].url}
+                            target={project.links[0].url.startsWith('http') ? '_blank' : undefined}
+                            rel={project.links[0].url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="rgbsplit font-medium text-[0.9rem] md:text-[0.95rem]"
+                          >
+                            {project.links[0].label}
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-[0.95rem] md:text-[1.05rem] leading-[1.5] text-[var(--color-fill)] opacity-70 mt-2">
+                        {project.tagline}
+                      </p>
                     </div>
 
-                    {/* Box Content */}
                     <div className="px-0 pb-6 md:pb-8 pt-0">
                       <div className="flex flex-col gap-4 md:gap-5">
                         {project.description.map((desc, i) => (
@@ -283,20 +307,19 @@ export default function CVTimeline() {
                         {project.techStack && (
                           <p className="text-[0.9rem] md:text-[0.95rem] leading-relaxed text-[var(--color-fill)] m-0 mt-2">
                             <strong className="font-medium mix-blend-multiply opacity-90">Tech Stack</strong>{' '}
-                            <span className="opacity-70 mx-1">&rarr;</span>{' '}
+                            <span className="opacity-70 mx-1">→</span>{' '}
                             <span className="opacity-90">{project.techStack}</span>
                           </p>
                         )}
                       </div>
 
-                      {/* Expandable Problems Section */}
-                      {project.problems && project.problems.length > 0 && (
+                      {project.technicalDetails && project.technicalDetails.length > 0 && (
                         <div className="mt-8">
                           <button
                             onClick={() => toggleExpand(index)}
                             className="text-[0.9rem] md:text-[0.95rem] font-medium text-[var(--color-fill)] opacity-70 hover:opacity-100 transition-opacity flex items-center gap-2 group cursor-pointer"
                           >
-                            {isExpanded ? 'View Less' : 'View More'}
+                            {isExpanded ? 'View Less' : 'View Technical Details'}
                             <svg
                               width="14"
                               height="14"
@@ -314,19 +337,23 @@ export default function CVTimeline() {
                           >
                             <div className="overflow-hidden">
                               <div className="pt-8 border-t border-[var(--color-fill)]/10">
-                                <h4 className="text-[0.75rem] md:text-[0.875rem] font-semibold uppercase tracking-wider text-[var(--color-fill)] opacity-60 mb-6">
-                                  Technical Challenges Addressed
-                                </h4>
-                                <div className="flex flex-col gap-5 md:gap-6">
-                                  {project.problems.map((problem, i) => (
+                                <div className="flex flex-col gap-8 md:gap-10">
+                                  {project.technicalDetails.map((detail, i) => (
                                     <div key={i} className="problem-item">
-                                      <h5 className="text-[1rem] md:text-[1.05rem] font-medium text-[var(--color-fill)] opacity-95 mb-1 md:mb-2 flex items-start gap-2">
-                                        <span className="opacity-40 mt-[2px] md:mt-[4px]">•</span>
-                                        {problem.title}
+                                      <h5 className="text-[1rem] md:text-[1.1rem] font-semibold text-[var(--color-fill)] mb-3">
+                                        {detail.title}
                                       </h5>
-                                      <p className="text-[0.95rem] md:text-[1rem] leading-[1.6] pl-[16px] md:pl-[20px] text-[var(--color-fill)] opacity-75 m-0">
-                                        {problem.solution}
-                                      </p>
+                                      <div className="space-y-2">
+                                        <p className="text-[0.95rem] md:text-[1rem] leading-[1.6] text-[var(--color-fill)] opacity-75 m-0">
+                                          <strong className="opacity-60">Problem:</strong> {detail.problem}
+                                        </p>
+                                        <p className="text-[0.95rem] md:text-[1rem] leading-[1.6] text-[var(--color-fill)] opacity-75 m-0">
+                                          <strong className="opacity-60">Solution:</strong> {detail.solution}
+                                        </p>
+                                        <p className="text-[0.95rem] md:text-[1rem] leading-[1.6] text-[var(--color-fill)] opacity-75 m-0">
+                                          <strong className="opacity-60">Result:</strong> {detail.result}
+                                        </p>
+                                      </div>
                                     </div>
                                   ))}
                                 </div>
@@ -343,7 +370,6 @@ export default function CVTimeline() {
           })}
         </ol>
 
-        {/* View All Button */}
         {!showAll && projectsData.length > INITIAL_PROJECTS && (
           <div className="mt-8 lg:mt-12 flex justify-start">
             <button

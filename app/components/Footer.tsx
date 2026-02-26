@@ -3,21 +3,21 @@
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(2024);
+  const [currentYear, setCurrentYear] = useState(2026);
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
+    setCurrentYear(2026);
   }, []);
 
   return (
-    <footer 
+    <footer
       className="group"
       style={{ paddingBlockEnd: 'var(--innerPad)' }}
     >
       <div className="wrap flex items-baseline pt-8 relative"
       >
         {/* Top Line */}
-        <div 
+        <div
           className="absolute top-0 h-[1px]"
           style={{
             left: 'var(--outerPad)',
@@ -26,7 +26,7 @@ export default function Footer() {
             mixBlendMode: 'overlay'
           }}
         />
-        
+
         <p className="text-[var(--size-s)] flex-shrink-0 whitespace-nowrap"
         >
           &copy; {currentYear} Rishav Mishra{' '}
@@ -39,21 +39,21 @@ export default function Footer() {
             👋
           </span>
         </p>
-        
+
         <ul className="flex flex-1 gap-6 justify-end whitespace-nowrap"
         >
           <li>
-            <a 
-              className="rgbsplit noline" 
+            <a
+              className="rgbsplit noline"
               href="mailto:onlyrishavmishra@gmail.com"
             >
               Email
             </a>
           </li>
           <li>
-            <a 
-              className="rgbsplit noline" 
-              href="https://www.linkedin.com/in/irishavmishra/" 
+            <a
+              className="rgbsplit noline"
+              href="https://linkedin.com/in/irishavmishra"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -61,13 +61,23 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a 
-              className="rgbsplit noline" 
-              href="https://x.com/irishavmishra" 
+            <a
+              className="rgbsplit noline"
+              href="https://github.com/irishavmishra"
               target="_blank"
               rel="noopener noreferrer"
             >
-              X(Twitter)
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              className="rgbsplit noline"
+              href="https://x.com/irishavmishra"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X (Twitter)
             </a>
           </li>
         </ul>

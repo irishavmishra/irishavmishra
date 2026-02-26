@@ -2,25 +2,25 @@ export default function IntroSection() {
   return (
     <section className="push" data-section="intro">
       <p className="mb-4">
-        Currently, I am building{' '}
-        <a
-          className="brilliant relative inline-block font-medium mx-[0.075em]"
-          href="#"
-        >
-          [<span>Rently</span>]
-        </a>
-        , a property management platform for small to medium landlords, focused on automating rent collection, maintenance requests, and financial reporting through dedicated landlord and tenant portals with real time payment tracking and document management.
+        I build web applications using React, Node.js, and PostgreSQL.
+      </p>
+
+      <p className="mb-4">
+        6 projects shipped. 100K+ user visits. Available now.
+      </p>
+
+      <p className="mb-4">
+        Based in Bhopal. Open to remote and relocation.
       </p>
 
       <p>
-        Reach me via{' '}
         <a
           className="rgbsplit"
           href="mailto:onlyrishavmishra@gmail.com"
         >
           Email
         </a>
-        {' '},{' '}
+        {' '}·{' '}
         <a
           className="rgbsplit"
           href="https://www.linkedin.com/in/irishavmishra/"
@@ -29,15 +29,24 @@ export default function IntroSection() {
         >
           LinkedIn
         </a>
-        {' '}and{' '}
+        {' '}·{' '}
+        <a
+          className="rgbsplit"
+          href="https://github.com/irishavmishra"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        {' '}·{' '}
         <a
           className="rgbsplit"
           href="https://x.com/irishavmishra"
           target="_blank"
           rel="noopener noreferrer"
         >
-          X(Twitter)
-        </a>.
+          X (Twitter)
+        </a>
       </p>
 
       <style jsx>{`
