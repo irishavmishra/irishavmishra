@@ -1,12 +1,46 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
+};
+
 export const metadata: Metadata = {
-  title: "Rishav Mishra → Product & Design",
-  description: "Product designer and developer crafting delightful user experiences. Building products that people love to use.",
+  title: "Rishav Mishra - Full Stack Developer",
+  description: "Full Stack Developer building web applications using React, Node.js, and PostgreSQL. 6 projects shipped, 100K+ user visits.",
+  keywords: ["Full Stack Developer", "React", "Node.js", "PostgreSQL", "Next.js", "TypeScript", "Web Developer", "India", "Bhopal"],
+  authors: [{ name: "Rishav Mishra" }],
+  creator: "Rishav Mishra",
+  metadataBase: new URL("https://rishav.online"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Rishav Mishra → Product & Design",
-    description: "Product designer and developer crafting delightful user experiences. Building products that people love to use.",
+    type: "website",
+    locale: "en_US",
+    url: "https://rishav.online",
+    title: "Rishav Mishra - Full Stack Developer",
+    description: "Full Stack Developer building web applications using React, Node.js, and PostgreSQL. 6 projects shipped, 100K+ user visits.",
+    siteName: "Rishav Mishra Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rishav Mishra - Full Stack Developer",
+    description: "Full Stack Developer building web applications using React, Node.js, and PostgreSQL. 6 projects shipped, 100K+ user visits.",
+    creator: "@irishavmishra",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
