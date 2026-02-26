@@ -1,3 +1,5 @@
+'use client';
+
 import { FaEnvelope, FaLinkedin, FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 export default function IntroSection() {
